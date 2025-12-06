@@ -1,0 +1,53 @@
+#timeline {
+    padding: 40px;
+    background: #fffafc;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .timeline-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+  }
+  
+  .timeline-item img {
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .timeline-item p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #444;
+  }
+  
+  /* Animation classes */
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .floating-heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatUp linear forwards;
+  }
+  
+  @keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+  }
