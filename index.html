@@ -5,15 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Anniversary App</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="timeline/timeline.css">
 </head>
- <!-- Other sections -->
- <div id="app">
-    <!-- Timeline -->
-    <?php include 'timeline/timeline.html'; ?>
-  </div>
-
 <body>
-  <h1>Happy 3rd Anniversary Deandra💖</h1>
+  <h1>Happy 3rd Anniversary Deandra 💖</h1>
+
+  <!-- Timeline section -->
+  <section id="timeline">
+    <h2>Our Journey 🌸</h2>
+    <div class="timeline-container">
+      <div class="timeline-item fade-in">
+        <p>Our first dates 💕</p>
+        <img src="assets/images/first_dates.jpeg" alt="First Date">
+      </div>
+      <div class="timeline-item slide-in">
+        <p>My Adventurous Girl</p>
+        <img src="assets/images/adventures.jpeg" alt="Trip">
+      </div>
+      <div class="timeline-item slide-in">
+        <p>More Dates...</p>
+        <img src="assets/images/date_nights.jpeg" alt="Trip">
+      </div>
+    </div>
+    <audio id="bg-music" autoplay loop muted>
+      <source src="assets/audio/love_me.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
   <script src="script.js"></script>
-</body> 
+  <script src="timeline/timeline.js" defer></script>
+</body>
 </html>
