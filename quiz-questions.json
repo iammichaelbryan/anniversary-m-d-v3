@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Where did we have our first date?",
+    "answers": [
+      "At a coffee shop",
+      "At the movies",
+      "At the beach",
+      "At a restaurant"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "What's my favorite thing about you?",
+    "answers": [
+      "Your smile",
+      "Your laugh",
+      "Your kindness",
+      "Everything"
+    ],
+    "correct": 3
+  },
+  {
+    "question": "What song always reminds me of us?",
+    "answers": [
+      "XO by Beyoncé",
+      "Perfect by Ed Sheeran",
+      "Thinking Out Loud",
+      "All of Me"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "What's our favorite activity together?",
+    "answers": [
+      "Watching movies",
+      "Going to the beach",
+      "Cooking together",
+      "All adventures together"
+    ],
+    "correct": 3
+  },
+  {
+    "question": "How many years have we been together?",
+    "answers": [
+      "2 years",
+      "3 years",
+      "4 years",
+      "5 years"
+    ],
+    "correct": 1
+  }
+]

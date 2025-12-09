@@ -3,36 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Anniversary App</title>
+  <title>Our Anniversary Experience</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="timeline/timeline.css">
 </head>
 <body>
-  <h1>Happy 3rd Anniversary Deandra 💖</h1>
-
-  <!-- Timeline section -->
-  <section id="timeline">
-    <h2>Our Journey 🌸</h2>
-    <div class="timeline-container">
-      <div class="timeline-item fade-in">
-        <p>Our first dates 💕</p>
-        <img src="assets/images/first_dates.jpeg" alt="First Date">
-      </div>
-      <div class="timeline-item slide-in">
-        <p>My Adventurous Girl</p>
-        <img src="assets/images/adventures.jpeg" alt="Trip">
-      </div>
-      <div class="timeline-item slide-in">
-        <p>More Dates...</p>
-        <img src="assets/images/date_nights.jpeg" alt="Trip">
-      </div>
-    </div>
-    <audio id="bg-music" autoplay loop muted>
-      <source src="assets/audio/love_me.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Landing -->
+  <section id="landing">
+    <h1>Happy 3rd Anniversary Deandra 💖</h1>
+    <p class="subtitle">A journey through our memories</p>
+    <button class="scroll-btn" onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">
+      Begin Our Story
+    </button>
   </section>
 
+  <!-- 1. Memory Timeline -->
+  <section id="timeline">
+    <h2>Our Journey 🌸</h2>
+    <div class="timeline-grid">
+      <div class="timeline-item fade-in">
+        <img src="assets/images/jaw kiss early days.jpeg" alt="Early Days">
+        <p>Early days - where it all began</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <img src="assets/images/handsheld.jpeg" alt="Hand in hand">
+        <p>Hand in hand through everything</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <img src="assets/images/beach shadows heart.jpeg" alt="Beach memories">
+        <p>Making memories by the sea</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <img src="assets/images/look at move - movies.jpeg" alt="Movie nights">
+        <p>Our cozy movie nights</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <img src="assets/images/you look sooo good.jpeg" alt="You look amazing">
+        <p>Every moment you take my breath away</p>
+      </div>
+      <div class="timeline-item fade-in">
+        <img src="assets/images/deandra-long distance.jpeg" alt="Long distance">
+        <p>Distance couldn't keep us apart</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Quiz Time -->
+  <section id="quiz">
+    <h2>Quiz Time 🎯</h2>
+    <p class="section-intro">How well do you remember our journey?</p>
+    <div class="love-meter">
+      <div class="love-meter-fill"></div>
+    </div>
+    <div id="quiz-container">
+      <div class="quiz-card">
+        <p class="question-text">Loading questions...</p>
+        <div class="answers-grid"></div>
+      </div>
+      <div class="quiz-score"></div>
+    </div>
+    <button class="next-section-btn" onclick="document.getElementById('giftbox').scrollIntoView({behavior: 'smooth'})">
+      Continue to Gifts 🎁
+    </button>
+  </section>
+
+  <!-- 3. Virtual Gift Box -->
+  <section id="giftbox">
+    <h2>Virtual Gift Box 🎁</h2>
+    <p class="section-intro">I have some special gifts for you...</p>
+    <div class="gift-grid">
+      <div class="gift-item" data-gift="poem">
+        <div class="gift-icon">📝</div>
+        <p>A Poem for You</p>
+      </div>
+      <div class="gift-item" data-gift="playlist">
+        <div class="gift-icon">🎵</div>
+        <p>Our Playlist</p>
+      </div>
+      <div class="gift-item" data-gift="gallery">
+        <div class="gift-icon">📸</div>
+        <p>Photo Memories</p>
+      </div>
+      <div class="gift-item" data-gift="letter">
+        <div class="gift-icon">💌</div>
+        <p>Love Letter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Future Dreams Board -->
+  <section id="dreams">
+    <h2>Future Dreams Board 🌍</h2>
+    <p class="section-intro">All the adventures we'll share together...</p>
+    <div class="dreams-grid">
+      <div class="dream-card">
+        <span class="dream-icon">✈️</span>
+        <h3>Travel Together</h3>
+        <p>Explore the world side by side</p>
+      </div>
+      <div class="dream-card">
+        <span class="dream-icon">🏠</span>
+        <h3>Our Home</h3>
+        <p>Building our perfect space together</p>
+      </div>
+      <div class="dream-card">
+        <span class="dream-icon">🍳</span>
+        <h3>Cooking Adventures</h3>
+        <p>Trying new recipes and making memories</p>
+      </div>
+      <div class="dream-card">
+        <span class="dream-icon">🎓</span>
+        <h3>Growing Together</h3>
+        <p>Supporting each other's dreams</p>
+      </div>
+      <div class="dream-card">
+        <span class="dream-icon">🌅</span>
+        <h3>Morning Coffee</h3>
+        <p>Starting every day together</p>
+      </div>
+      <div class="dream-card">
+        <span class="dream-icon">💍</span>
+        <h3>Forever</h3>
+        <p>A lifetime of love and laughter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Daily Affirmations -->
+  <section id="affirmations">
+    <h2>Daily Affirmations 💌</h2>
+    <p class="section-intro">Today's message for you...</p>
+    <div class="affirmation-card">
+      <div class="affirmation-content">
+        <p id="affirmation-text">Loading your daily message...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Gift Box -->
+  <div id="gift-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="assets/audio/love_me.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="script.js"></script>
-  <script src="timeline/timeline.js" defer></script>
 </body>
 </html>

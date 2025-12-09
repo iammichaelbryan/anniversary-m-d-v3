@@ -1,0 +1,112 @@
+ Anniversary Experience App – Specification Document
+1. Overview
+A single‑page, mobile‑optimized web app that celebrates a relationship journey through interactive sections. The app should feel like a modern digital magazine: elegant typography, grid‑based image layouts, smooth animations, and playful interactive elements.
+The experience flows through five main modules:
+1. 	Memory Timeline
+2. 	Quiz Time
+3. 	Virtual Gift Box
+4. 	Future Dreams Board
+5. 	Daily Affirmations
+
+2. Design Principles
+• 	Modern magazine style:
+• 	Grid‑based photo layouts (like editorial spreads).
+• 	Large, bold section headers.
+• 	Clean sans‑serif typography (e.g., Segoe UI, Helvetica Neue).
+• 	White space and pastel accent colors.
+• 	Mobile‑first design:
+• 	Responsive grid (2‑column on desktop, 1‑column stacked on mobile).
+• 	Touch‑friendly buttons and interactions.
+• 	Lightweight animations optimized for mobile browsers.
+• 	Playful but elegant:
+• 	Floating hearts, confetti, fade‑in transitions.
+• 	Subtle background music (first 45 seconds only).
+• 	Smooth scroll navigation between sections.
+
+3. File Structure
+
+
+4. Feature Specifications
+🌸 Memory Timeline
+• 	Layout:
+• 	Grid format for each milestone (photo + caption).
+• 	On desktop: 2‑column grid. On mobile: 1‑column stacked.
+• 	Content:
+• 	Each milestone = image + short caption.
+• 	Optional animation (fade‑in, slide‑in).
+• 	Extra touches:
+• 	Floating hearts animation.
+• 	Background music plays for first 45 seconds, muted until user clicks.
+• 	Tech:
+• 	IntersectionObserver or scroll event to trigger  class.
+• 	CSS transitions for fade/slide.
+
+🎯 Quiz Time
+• 	Layout:
+• 	Multiple‑choice questions in card format.
+• 	Grid layout for answers (2x2 on desktop, stacked on mobile).
+• 	Content:
+• 	Trivia questions about relationship milestones.
+• 	JSON file for easy question editing.
+• 	Rewards:
+• 	Confetti animation on correct answers.
+• 	“Love meter” progress bar fills up.
+
+🎁 Virtual Gift Box
+• 	Layout:
+• 	Grid of clickable gift icons (3–4 per row).
+• 	Content:
+• 	Poem (styled like a handwritten note).
+• 	Playlist link (Spotify/YouTube embed).
+• 	Photo collage (lightbox gallery).
+• 	Interaction:
+• 	Icons “shake” or “bounce” when clicked.
+• 	Reveal content in modal overlay.
+
+🌍 Future Dreams Board
+• 	Layout:
+• 	Grid of sticky notes or pinned images.
+• 	Masonry‑style layout for magazine feel.
+• 	Content:
+• 	Travel destinations, recipes, milestones.
+• 	Interaction:
+• 	Add/edit notes (optional real‑time sync via Firebase).
+• 	Drag‑and‑drop rearrangement.
+
+💌 Daily Affirmations
+• 	Layout:
+• 	Single card per day, styled like a magazine pull‑quote.
+• 	Content:
+• 	Preloaded 365 affirmations/love notes.
+• 	Interaction:
+• 	JavaScript  determines which message to show.
+• 	Flip animation when card changes.
+
+5. Technical Notes
+• 	Responsive grid: Use CSS Grid or Flexbox with media queries.
+• 	Animations: Use CSS transitions + lightweight JS (no heavy libraries).
+• 	Audio:
+• 	Autoplay muted, unmute on click.
+• 	Stop after 45 seconds ().
+• 	Performance:
+• 	Optimize images for mobile (compressed JPEG/WEBP).
+• 	Lazy‑load images in timeline.
+• 	Accessibility:
+• 	Alt text for all images.
+• 	High‑contrast text for captions.
+
+6. User Flow
+1. 	Landing page → “Happy Anniversary” headline.
+2. 	Scroll into Timeline (grid of milestones).
+3. 	Button → “Ready for a challenge?” → Quiz Time.
+4. 	After quiz → unlock Virtual Gift Box.
+5. 	Gift box → links to Future Dreams Board.
+6. 	Final section → Daily Affirmations (one per day).
+
+7. Visual Style Guide
+• 	Colors: Pastel pinks, creams, soft blues.
+• 	Typography:
+• 	Headings: Bold sans‑serif (e.g., Montserrat).
+• 	Body: Clean serif (e.g., Georgia) for magazine feel.
+• 	Icons: Minimal, flat design.
+• 	Animations: Smooth, subtle (fade, slide, bounce, confetti).
