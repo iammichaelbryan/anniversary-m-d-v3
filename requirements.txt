@@ -1,0 +1,126 @@
+Anniversary App Flow:
+
+image found at assets\images\App Background.jpeg is the background image to the entire app, so icons must have proper contrast. Different colour shadows can be used to represent different sections.
+
+Background Music: all songs in assets\audio, where the first 90 seconds of each song plays, shuffled, at volume 0.25
+
+Intro.
+
+SilencingMe.jpeg appears, with a caption.
+
+"Let me put this Software Engineering degree to use, let me cook(show you how much I love you) *two hands raised emoji* "
+
+First Section
+
+Our Journey (Our Journey folder under images)
+In this section, there will be preview pictures for each section/subject, for example, firstDate1.jpeg, for FirstDates folder, that when hovered over have an option to View Gallery, 
+when she chooses to view the gallery, it'll have a general caption describing each gallery, and Locations, with each listed location having an location pin emoji then the name of the place. which make a pop up mini gallery with all the pictures in the folder, when she clicks on any picture it'll become the main focus, she should be able to press back and forward arrows to see other pictures in gallery
+
+first dates folder preview image: firstDate1.jpeg, other images for this gallery will be in the folder.
+
+Caption: Here are our first dates, simple yet they paved the way to the amazing bond we share now.
+
+Locations:
+Devon House, Kingston
+Palace Cineplex, Sovereign Centre, Kingston
+
+
+early days folder preview image: earlydays1.jpeg, other images for this gallery will be in the folder.
+
+Caption: Our first moments together, simple yet they paved the way to the amazing bond we share now.
+
+Locations:
+Tower of Olympus, Towers Tall, UWI, Mona
+
+adventure and moments folder: preview image: adv1.jpeg, other images for this gallery will be in the folder.
+
+Caption: Find our most genuine moments together, dates, adventures, goofing around, the point is, WE ARE TOGETHER. So many more pictures I didn't put in here, but you get the point, lol.
+
+Places/Moments:
+Tower of the Mighty Dragons, Towers Tall, UWI, Mona
+Dominique's Wedding
+The Circus
+Go Karting
+Palace Cineplex, Sovereign Centre, Kingston
+Carib Cinema
+Bob Marley Beach
+The National Stadium
+Carnival
+Devon House (again)
+Boardwalk Beach
+Dunns River Falls
+Chez Maria Restaurant
+Brew'd Awakenings
+Calby's Hidden Beauty River
+Wherever tf else we felt like going (can't be bothered to list anymore)
+
+Graduation Folder preview image: mdgraduation.jpeg, other images for this gallery will be in the folder.
+
+Caption: The 3 years we have been together have been the best, but some of the hardest of our lives (because of UWI), I have seen us put blood, sweat, and tears into our schooling, and we're degreed because of it.
+
+Places: We made it!
+
+
+
+Quiz:
+
+1) Let's start easy and fucking obvious. How many years have we been together?
+a)3
+b)3
+c)3
+d)3
+
+a is the right answer, any other she chooses, display "you choose the wrong right answer"
+
+2) Our First Date
+
+a)The Movies
+b)Devon House
+c)The Beach
+d)Coffee
+
+correct answer: Devon House
+
+3) What's my favourite thing about you?
+
+Your smile
+Your laugh
+Your kindness
+Everything - correct
+
+What song always reminds me of us?
+
+WGFT by Gunna
+Those Eyes (Small Things You Do) by New West
+Lightning by Mortimer 
+All of the Above - correct
+
+What's our favourite activity together?
+
+Watching movies
+Going to the beach
+Cooking together
+All adventures together -correct
+
+
+Music Section -
+
+Our Favourite Music:
+
+YT Music
+Give this playlist a listen: To Deandra🫶🏾❤️ 
+https://music.youtube.com/playlist?list=PL9vUUVJQhlSGXAj-pPw2fycW8M_aCZzdX&si=RXEMgmptbRLDdgdS
+
+Spotify
+Give this playlist a listen: To Michael🫶🏾❤️ https://open.spotify.com/playlist/0TkDxNE9z9oBod4d74AyZt?si=2vVjpW_sSRWRLyhiBoMR-w&pi=u-b-NWhk3wSUCP
+
+
+My Gifts to you today (DON'T OPEN UNTIL GIFTS ARE DELIVERED)
+
+1) Gift Basket:Bath & body works body spray, skin care gift set with facial cleansers, scented candle, journal, cute pen, comb & brush set, moisterizer, lipstick, massage oils, insulated hot & cold tumbler
+Image:assets\images\gifts\giftbasket.jpeg
+
+2) 3-Rose Boquete: My promise to you every year we're together is to add a rose to that, next year a 4-rose Boquete, year 5 a 5-rose Boquete, and so on. The counter will probably start over when we get married, so I doubt it will get to 5  before we get married:)
+
+Image: assets\images\gifts\3-roses.jpeg
+

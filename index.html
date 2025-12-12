@@ -3,154 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Anniversary Experience</title>
+  <title>Happy 3rd Anniversary Deandra</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Landing -->
-  <section id="landing">
-    <h1>Happy 3rd Anniversary Deandra 💖</h1>
-    <p class="subtitle">A journey through our memories</p>
-    <button class="scroll-btn" onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">
-      Begin Our Story
-    </button>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#intro">Intro</a>
+    <a href="#our-journey">Our Journey</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#music">Music</a>
+    <a href="#gifts">Gifts</a>
+  </nav>
+
+  <!-- Intro Section -->
+  <section id="intro">
+    <div class="intro-content">
+      <img src="assets/images/intro/SilencingMe.jpeg" alt="Intro" class="intro-image">
+      <p class="intro-caption">Let me put this Software Engineering degree to use, let me cook (show you how much I love you) 🙌</p>
+    </div>
   </section>
 
-  <!-- 1. Memory Timeline -->
-  <section id="timeline">
-    <h2>Our Journey 🌸</h2>
-    <div class="timeline-grid">
-      <div class="timeline-item fade-in">
-        <img src="assets/images/jaw kiss early days.jpeg" alt="Early Days">
-        <p>Early days - where it all began</p>
+  <!-- Our Journey Section -->
+  <section id="our-journey">
+    <h2>Our Journey</h2>
+    <div class="gallery-previews">
+      <!-- First Dates Gallery -->
+      <div class="gallery-preview" data-gallery="first-dates">
+        <img src="assets/images/ourJourney/first dates/firstDate1.jpeg" alt="First Dates" class="preview-image">
+        <h3 class="gallery-title">First Dates</h3>
+        <div class="preview-overlay">
+          <button class="view-gallery-btn">View Gallery</button>
+        </div>
       </div>
-      <div class="timeline-item fade-in">
-        <img src="assets/images/handsheld.jpeg" alt="Hand in hand">
-        <p>Hand in hand through everything</p>
+
+      <!-- Early Days Gallery -->
+      <div class="gallery-preview" data-gallery="early-days">
+        <img src="assets/images/ourJourney/early days/earlydays1.jpeg" alt="Early Days" class="preview-image">
+        <h3 class="gallery-title">Early Days</h3>
+        <div class="preview-overlay">
+          <button class="view-gallery-btn">View Gallery</button>
+        </div>
       </div>
-      <div class="timeline-item fade-in">
-        <img src="assets/images/beach shadows heart.jpeg" alt="Beach memories">
-        <p>Making memories by the sea</p>
+
+      <!-- Adventures and Moments Gallery -->
+      <div class="gallery-preview" data-gallery="adventures">
+        <img src="assets/images/ourJourney/adventure and moments/adv1.jpeg" alt="Adventures" class="preview-image">
+        <h3 class="gallery-title">Adventures & Moments</h3>
+        <div class="preview-overlay">
+          <button class="view-gallery-btn">View Gallery</button>
+        </div>
       </div>
-      <div class="timeline-item fade-in">
-        <img src="assets/images/look at move - movies.jpeg" alt="Movie nights">
-        <p>Our cozy movie nights</p>
-      </div>
-      <div class="timeline-item fade-in">
-        <img src="assets/images/you look sooo good.jpeg" alt="You look amazing">
-        <p>Every moment you take my breath away</p>
-      </div>
-      <div class="timeline-item fade-in">
-        <img src="assets/images/deandra-long distance.jpeg" alt="Long distance">
-        <p>Distance couldn't keep us apart</p>
+
+      <!-- Graduation Gallery -->
+      <div class="gallery-preview" data-gallery="graduation">
+        <img src="assets/images/ourJourney/graduation/mdgraduation.jpeg" alt="Graduation" class="preview-image">
+        <h3 class="gallery-title">Graduation</h3>
+        <div class="preview-overlay">
+          <button class="view-gallery-btn">View Gallery</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. Quiz Time -->
+  <!-- Quiz Section -->
   <section id="quiz">
-    <h2>Quiz Time 🎯</h2>
-    <p class="section-intro">How well do you remember our journey?</p>
-    <div class="love-meter">
-      <div class="love-meter-fill"></div>
-    </div>
+    <h2>Quiz Time</h2>
     <div id="quiz-container">
-      <div class="quiz-card">
-        <p class="question-text">Loading questions...</p>
-        <div class="answers-grid"></div>
+      <div class="quiz-question">
+        <p class="question-text">Loading...</p>
+        <div class="answers"></div>
+        <div class="quiz-feedback"></div>
       </div>
-      <div class="quiz-score"></div>
+      <button id="next-question-btn" style="display: none;">Next Question</button>
+      <div class="quiz-results" style="display: none;"></div>
     </div>
-    <button class="next-section-btn" onclick="document.getElementById('giftbox').scrollIntoView({behavior: 'smooth'})">
-      Continue to Gifts 🎁
+  </section>
+
+  <!-- Music Section -->
+  <section id="music">
+    <h2>Our Favourite Music</h2>
+    <div class="playlist-links">
+      <div class="playlist-card">
+        <h3>🎵 YouTube Music</h3>
+        <p>Give this playlist a listen: To Deandra🫶🏾❤️</p>
+        <a href="https://music.youtube.com/playlist?list=PL9vUUVJQhlSGXAj-pPw2fycW8M_aCZzdX&si=RXEMgmptbRLDdgdS" target="_blank" class="playlist-btn">
+          Open Playlist
+        </a>
+      </div>
+      <div class="playlist-card">
+        <h3>🎧 Spotify</h3>
+        <p>Give this playlist a listen: To Michael🫶🏾❤️</p>
+        <a href="https://open.spotify.com/playlist/0TkDxNE9z9oBod4d74AyZt?si=2vVjpW_sSRWRLyhiBoMR-w&pi=u-b-NWhk3wSUCP" target="_blank" class="playlist-btn">
+          Open Playlist
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gifts Section -->
+  <section id="gifts">
+    <h2>My Gifts to You Today</h2>
+    <p class="gifts-note">(DON'T OPEN UNTIL GIFTS ARE DELIVERED)</p>
+
+    <!-- Reveal Button -->
+    <button id="reveal-gifts-btn" class="reveal-btn">
+      🎁 Reveal Your Gifts
     </button>
-  </section>
 
-  <!-- 3. Virtual Gift Box -->
-  <section id="giftbox">
-    <h2>Virtual Gift Box 🎁</h2>
-    <p class="section-intro">I have some special gifts for you...</p>
-    <div class="gift-grid">
-      <div class="gift-item" data-gift="poem">
-        <div class="gift-icon">📝</div>
-        <p>A Poem for You</p>
+    <!-- Hidden Gifts Grid -->
+    <div class="gifts-grid" id="gifts-grid" style="display: none;">
+      <div class="gift-card">
+        <img src="assets/images/gifts/giftbasket.jpeg" alt="Gift Basket" class="gift-image" onclick="openGiftImage(this.src)">
+        <h3>Gift Basket</h3>
+        <p>Bath & body works body spray, skin care gift set with facial cleansers, scented candle, journal, cute pen, comb & brush set, moisturizer, lipstick, massage oils, insulated hot & cold tumbler</p>
       </div>
-      <div class="gift-item" data-gift="playlist">
-        <div class="gift-icon">🎵</div>
-        <p>Our Playlist</p>
-      </div>
-      <div class="gift-item" data-gift="gallery">
-        <div class="gift-icon">📸</div>
-        <p>Photo Memories</p>
-      </div>
-      <div class="gift-item" data-gift="letter">
-        <div class="gift-icon">💌</div>
-        <p>Love Letter</p>
+      <div class="gift-card">
+        <img src="assets/images/gifts/3-roses.jpeg" alt="3-Rose Bouquet" class="gift-image" onclick="openGiftImage(this.src)">
+        <h3>3-Rose Bouquet</h3>
+        <p>My promise to you every year we're together is to add a rose to that, next year a 4-rose Bouquet, year 5 a 5-rose Bouquet, and so on. The counter will probably start over when we get married, so I doubt it will get to 5 before we get married :)</p>
       </div>
     </div>
   </section>
 
-  <!-- 4. Future Dreams Board -->
-  <section id="dreams">
-    <h2>Future Dreams Board 🌍</h2>
-    <p class="section-intro">All the adventures we'll share together...</p>
-    <div class="dreams-grid">
-      <div class="dream-card">
-        <span class="dream-icon">✈️</span>
-        <h3>Travel Together</h3>
-        <p>Explore the world side by side</p>
-      </div>
-      <div class="dream-card">
-        <span class="dream-icon">🏠</span>
-        <h3>Our Home</h3>
-        <p>Building our perfect space together</p>
-      </div>
-      <div class="dream-card">
-        <span class="dream-icon">🍳</span>
-        <h3>Cooking Adventures</h3>
-        <p>Trying new recipes and making memories</p>
-      </div>
-      <div class="dream-card">
-        <span class="dream-icon">🎓</span>
-        <h3>Growing Together</h3>
-        <p>Supporting each other's dreams</p>
-      </div>
-      <div class="dream-card">
-        <span class="dream-icon">🌅</span>
-        <h3>Morning Coffee</h3>
-        <p>Starting every day together</p>
-      </div>
-      <div class="dream-card">
-        <span class="dream-icon">💍</span>
-        <h3>Forever</h3>
-        <p>A lifetime of love and laughter</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Daily Affirmations -->
-  <section id="affirmations">
-    <h2>Daily Affirmations 💌</h2>
-    <p class="section-intro">Today's message for you...</p>
-    <div class="affirmation-card">
-      <div class="affirmation-content">
-        <p id="affirmation-text">Loading your daily message...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal for Gift Box -->
-  <div id="gift-modal" class="modal">
+  <!-- Gift Image Modal -->
+  <div id="gift-image-modal" class="modal">
     <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <div id="modal-body"></div>
+      <span class="modal-close" onclick="closeGiftImage()">&times;</span>
+      <img id="gift-image-full" src="" alt="Gift Image">
     </div>
   </div>
 
-  <!-- Background music -->
-  <audio id="bg-music" loop>
-    <source src="assets/audio/love_me.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-header">
+        <h2 id="gallery-title"></h2>
+        <p id="gallery-caption"></p>
+        <div id="gallery-locations"></div>
+      </div>
+      <div class="gallery-viewer">
+        <button class="gallery-nav prev">&larr;</button>
+        <img id="gallery-main-image" src="" alt="Gallery Image">
+        <button class="gallery-nav next">&rarr;</button>
+      </div>
+      <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" style="display: none;"></audio>
 
   <script src="script.js"></script>
 </body>

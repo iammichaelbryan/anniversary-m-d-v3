@@ -1,364 +1,516 @@
-/* ===========================
-   ANNIVERSARY APP - MAIN SCRIPT
-   =========================== */
+/* ===================
+   ANNIVERSARY APP - JAVASCRIPT
+   =================== */
 
-// ===========================
-// GLOBAL SETUP
-// ===========================
+// ===================
+// BACKGROUND MUSIC
+// ===================
+const songs = [
+  'assets/audio/Beyoncé - XO (Video).mp3',
+  'assets/audio/love_me.mp3',
+  'assets/audio/thoseeyes.mp3',
+  'assets/audio/wgft.mp3'
+];
 
-// Background Music
-const music = document.getElementById("bg-music");
-let musicStarted = false;
-
-// Set volume to 30% (0.0 to 1.0 scale)
-if (music) {
-  music.volume = 0.25;
+// Shuffle songs
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
 }
 
-document.addEventListener("click", () => {
-  if (!musicStarted && music) {
-    music.muted = false;
-    music.play().catch(err => console.log("Music play blocked:", err));
-    musicStarted = true;
+const shuffledSongs = shuffleArray(songs);
+let currentSongIndex = 0;
+const musicPlayer = document.getElementById('bg-music');
+musicPlayer.volume = 0.25;
+
+function playNextSong() {
+  if (currentSongIndex >= shuffledSongs.length) {
+    currentSongIndex = 0;
   }
+
+  musicPlayer.src = shuffledSongs[currentSongIndex];
+  musicPlayer.play().catch(err => console.log('Music autoplay blocked:', err));
+
+  // Stop after 90 seconds and play next song
+  setTimeout(() => {
+    currentSongIndex++;
+    playNextSong();
+  }, 90000);
+}
+
+// Start music on first user interaction
+document.addEventListener('click', () => {
+  playNextSong();
 }, { once: true });
 
-// ===========================
-// FLOATING HEARTS ANIMATION
-// ===========================
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "floating-heart";
-  heart.innerHTML = "=�";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = 3 + Math.random() * 2 + "s";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 5000);
-}
-
-setInterval(createHeart, 2000);
-
-// ===========================
-// MEMORY TIMELINE - Scroll Reveal
-// ===========================
-const observerOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -100px 0px"
+// ===================
+// GALLERY DATA
+// ===================
+const galleries = {
+  'first-dates': {
+    title: 'First Dates',
+    caption: 'Here are our first dates, simple yet they paved the way to the amazing bond we share now.',
+    locations: ['📍 Devon House, Kingston', '📍 Palace Cineplex, Sovereign Centre, Kingston'],
+    images: [
+      'assets/images/ourJourney/first dates/firstDate1.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.15 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.15 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.15 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.15 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (7).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (8).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM (9).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.16 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (10).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (7).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (8).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM (9).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.17 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (7).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (8).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM (9).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.18 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM (7).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.19 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM (7).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.20 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (2).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (3).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (4).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (5).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (6).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM.jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.22 PM (1).jpeg',
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.22 PM.jpeg'
+    ]
+  },
+  'early-days': {
+    title: 'Early Days',
+    caption: 'Our first moments together, simple yet they paved the way to the amazing bond we share now.',
+    locations: ['📍 Tower of Olympus, Towers Tall, UWI, Mona'],
+    images: [
+      'assets/images/ourJourney/early days/earlydays1.jpeg',
+      'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (2).jpeg',
+      'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (3).jpeg',
+      'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM.jpeg'
+    ]
+  },
+  'adventures': {
+    title: 'Adventures & Moments',
+    caption: 'Find our most genuine moments together, dates, adventures, goofing around, the point is, WE ARE TOGETHER. So many more pictures I didn\'t put in here, but you get the point, lol.',
+    locations: [
+      '📍 Tower of the Mighty Dragons, Towers Tall, UWI, Mona',
+      '📍 Dominique\'s Wedding',
+      '📍 The Circus',
+      '📍 Go Karting',
+      '📍 Palace Cineplex, Sovereign Centre, Kingston',
+      '📍 Carib Cinema',
+      '📍 Bob Marley Beach',
+      '📍 The National Stadium',
+      '📍 Carnival',
+      '📍 Devon House (again)',
+      '📍 Boardwalk Beach',
+      '📍 Dunns River Falls',
+      '📍 Chez Maria Restaurant',
+      '📍 Brew\'d Awakenings',
+      '📍 Calby\'s Hidden Beauty River',
+      '📍 Wherever tf else we felt like going (can\'t be bothered to list anymore)'
+    ],
+    images: [
+      'assets/images/ourJourney/adventure and moments/adv1.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (5).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM (6).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.21 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.20.22 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.11 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.11 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.12 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.12 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.12 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.13 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.14 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.14 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.14 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.15 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.15 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.15 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (5).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (6).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM (7).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.16 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.17 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.17 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.18 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.23 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.23 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.25 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.27 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.27 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.28 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.29 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.33 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.37 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.37 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.37 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM (5).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.38 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.39 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (5).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (4).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (5).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM.jpeg'
+    ]
+  },
+  'graduation': {
+    title: 'Graduation',
+    caption: 'The 3 years we have been together have been the best, but some of the hardest of our lives (because of UWI), I have seen us put blood, sweat, and tears into our schooling, and we\'re degreed because of it.',
+    locations: ['📍 We made it!'],
+    images: [
+      'assets/images/ourJourney/graduation/mdgraduation.jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (1).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (2).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (3).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (4).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (5).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM (6).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.23 PM.jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (1).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (10).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (11).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (12).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (13).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (14).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (2).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (3).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (4).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (5).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (6).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (7).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (8).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM (9).jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.10.24 PM.jpeg',
+      'assets/images/ourJourney/graduation/WhatsApp Image 2025-12-11 at 6.14.11 PM.jpeg'
+    ]
+  }
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, observerOptions);
+// ===================
+// GALLERY MODAL
+// ===================
+let currentGallery = null;
+let currentImageIndex = 0;
 
-document.querySelectorAll(".timeline-item").forEach(item => {
-  observer.observe(item);
+const modal = document.getElementById('gallery-modal');
+const modalClose = document.querySelector('#gallery-modal .modal-close');
+const galleryTitle = document.getElementById('gallery-title');
+const galleryCaption = document.getElementById('gallery-caption');
+const galleryLocations = document.getElementById('gallery-locations');
+const galleryMainImage = document.getElementById('gallery-main-image');
+const galleryThumbnails = document.getElementById('gallery-thumbnails');
+const prevBtn = document.querySelector('.gallery-nav.prev');
+const nextBtn = document.querySelector('.gallery-nav.next');
+
+// Open gallery
+document.querySelectorAll('.gallery-preview').forEach(preview => {
+  preview.addEventListener('click', () => {
+    const galleryKey = preview.dataset.gallery;
+    openGallery(galleryKey);
+  });
 });
 
-// ===========================
-// QUIZ TIME MODULE
-// ===========================
-let quizQuestions = [];
-let currentQuestionIndex = 0;
-let score = 0;
+function openGallery(galleryKey) {
+  currentGallery = galleries[galleryKey];
+  currentImageIndex = 0;
 
-// Load quiz questions
-fetch('quiz-questions.json')
-  .then(response => response.json())
-  .then(data => {
-    quizQuestions = data;
-    loadQuestion();
-  })
-  .catch(err => {
-    console.error('Error loading quiz:', err);
-    document.querySelector('.question-text').textContent =
-      "Quiz questions couldn't load. But you're still amazing!";
+  galleryTitle.textContent = currentGallery.title;
+  galleryCaption.textContent = currentGallery.caption;
+  galleryLocations.innerHTML = currentGallery.locations.map(loc => `<p>${loc}</p>`).join('');
+
+  // Load thumbnails
+  galleryThumbnails.innerHTML = '';
+  currentGallery.images.forEach((img, index) => {
+    // Skip video files
+    if (img.endsWith('.mp4')) return;
+
+    const thumb = document.createElement('img');
+    thumb.src = img;
+    thumb.addEventListener('click', () => showImage(index));
+    galleryThumbnails.appendChild(thumb);
   });
 
-function loadQuestion() {
-  if (currentQuestionIndex >= quizQuestions.length) {
-    showQuizComplete();
+  showImage(0);
+  modal.classList.add('active');
+}
+
+function showImage(index) {
+  // Filter out video files
+  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
+  currentImageIndex = index;
+
+  if (imageFiles[currentImageIndex]) {
+    galleryMainImage.src = imageFiles[currentImageIndex];
+
+    // Update thumbnail active state
+    const thumbs = galleryThumbnails.querySelectorAll('img');
+    thumbs.forEach((thumb, i) => {
+      thumb.classList.toggle('active', i === currentImageIndex);
+    });
+  }
+}
+
+// Navigation
+prevBtn.addEventListener('click', () => {
+  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
+  currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+  showImage(currentImageIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
+  currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+  showImage(currentImageIndex);
+});
+
+// Close modal
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (!modal.classList.contains('active')) return;
+
+  if (e.key === 'ArrowLeft') prevBtn.click();
+  if (e.key === 'ArrowRight') nextBtn.click();
+  if (e.key === 'Escape') modal.classList.remove('active');
+});
+
+// ===================
+// QUIZ SECTION
+// ===================
+const quizQuestions = [
+  {
+    question: "Let's start easy and fucking obvious. How many years have we been together?",
+    answers: ['3', '3', '3', '3'],
+    correct: 0,
+    wrongMessage: 'You chose the wrong right answer'
+  },
+  {
+    question: 'Our First Date',
+    answers: ['The Movies', 'Devon House', 'The Beach', 'Coffee'],
+    correct: 1
+  },
+  {
+    question: "What's my favourite thing about you?",
+    answers: ['Your smile', 'Your laugh', 'Your kindness', 'Everything'],
+    correct: 3
+  },
+  {
+    question: 'What song always reminds me of us?',
+    answers: ['WGFT by Gunna', 'Those Eyes (Small Things You Do) by New West', 'Lightning by Mortimer', 'All of the Above'],
+    correct: 3
+  },
+  {
+    question: "What's our favourite activity together?",
+    answers: ['Watching movies', 'Going to the beach', 'Cooking together', 'All adventures together'],
+    correct: 3
+  }
+];
+
+let currentQuizIndex = 0;
+let quizScore = 0;
+
+const questionText = document.querySelector('.question-text');
+const answersContainer = document.querySelector('.answers');
+const quizFeedback = document.querySelector('.quiz-feedback');
+const nextQuestionBtn = document.getElementById('next-question-btn');
+const quizResults = document.querySelector('.quiz-results');
+
+function loadQuizQuestion() {
+  if (currentQuizIndex >= quizQuestions.length) {
+    showQuizResults();
     return;
   }
 
-  const question = quizQuestions[currentQuestionIndex];
-  const questionText = document.querySelector('.question-text');
-  const answersGrid = document.querySelector('.answers-grid');
-
+  const question = quizQuestions[currentQuizIndex];
   questionText.textContent = question.question;
-  answersGrid.innerHTML = '';
+  answersContainer.innerHTML = '';
+  quizFeedback.textContent = '';
+  nextQuestionBtn.style.display = 'none';
 
   question.answers.forEach((answer, index) => {
     const btn = document.createElement('button');
     btn.className = 'answer-btn';
     btn.textContent = answer;
-    btn.onclick = () => checkAnswer(index, question.correct);
-    answersGrid.appendChild(btn);
+    btn.addEventListener('click', () => checkQuizAnswer(index));
+    answersContainer.appendChild(btn);
   });
-
-  updateLoveMeter();
 }
 
-function checkAnswer(selected, correct) {
-  const buttons = document.querySelectorAll('.answer-btn');
+function checkQuizAnswer(selected) {
+  const question = quizQuestions[currentQuizIndex];
+  const buttons = answersContainer.querySelectorAll('.answer-btn');
 
   buttons.forEach(btn => btn.disabled = true);
 
-  if (selected === correct) {
+  if (selected === question.correct) {
     buttons[selected].classList.add('correct');
-    score++;
-    createConfetti();
+    quizFeedback.textContent = '✓ Correct!';
+    quizScore++;
   } else {
     buttons[selected].classList.add('incorrect');
-    buttons[correct].classList.add('correct');
-  }
+    buttons[question.correct].classList.add('correct');
 
-  setTimeout(() => {
-    currentQuestionIndex++;
-    loadQuestion();
-  }, 2000);
-}
-
-function updateLoveMeter() {
-  const fillPercent = (currentQuestionIndex / quizQuestions.length) * 100;
-  document.querySelector('.love-meter-fill').style.width = fillPercent + '%';
-}
-
-function showQuizComplete() {
-  const quizCard = document.querySelector('.quiz-card');
-  const scoreDisplay = document.querySelector('.quiz-score');
-
-  quizCard.innerHTML = `
-    <h3 style="text-align: center; color: #d45d79; margin-bottom: 1rem;">
-      Quiz Complete! <�
-    </h3>
-    <p style="text-align: center; font-size: 1.3rem;">
-      You got ${score} out of ${quizQuestions.length} correct!
-    </p>
-    <p style="text-align: center; margin-top: 1rem; color: #888;">
-      ${score === quizQuestions.length
-        ? "Perfect score! You know our story by heart =�"
-        : "Every moment with you is special, no matter the score! =�"}
-    </p>
-  `;
-
-  document.querySelector('.next-section-btn').classList.add('show');
-
-  // Big confetti celebration
-  for (let i = 0; i < 50; i++) {
-    setTimeout(() => createConfetti(), i * 30);
-  }
-}
-
-// ===========================
-// CONFETTI ANIMATION
-// ===========================
-function createConfetti() {
-  const colors = ['#ff6b9d', '#ffc3d5', '#ffeb99', '#a8e6cf', '#b4a7d6'];
-
-  for (let i = 0; i < 15; i++) {
-    const confetti = document.createElement('div');
-    confetti.className = 'confetti';
-    confetti.style.left = Math.random() * 100 + 'vw';
-    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    confetti.style.animationDuration = 2 + Math.random() * 2 + 's';
-    confetti.style.animationDelay = Math.random() * 0.5 + 's';
-    document.body.appendChild(confetti);
-
-    setTimeout(() => confetti.remove(), 4000);
-  }
-}
-
-// ===========================
-// VIRTUAL GIFT BOX MODULE
-// ===========================
-const giftContents = {
-  poem: {
-    title: "A Poem for You =�",
-    content: `
-      <div style="font-family: Georgia, serif; line-height: 2; font-size: 1.2rem; color: #555;">
-        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;">
-          Three years of love, laughter, and light,<br>
-          Every moment with you feels so right.<br>
-          Through adventures and quiet nights at home,<br>
-          With you, I've found where I belong.<br><br>
-
-          Your smile brightens my darkest day,<br>
-          Your love guides me along the way.<br>
-          Hand in hand, we've built our story,<br>
-          And each chapter is filled with glory.<br><br>
-
-          Here's to us, to three years strong,<br>
-          To a love that feels like our favorite song.<br>
-          Forever grateful, forever true,<br>
-          My heart will always belong to you. =�
-        </p>
-      </div>
-    `
-  },
-  playlist: {
-    title: "Our Playlist <�",
-    content: `
-      <div style="text-align: center;">
-        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #666;">
-          Songs that remind me of us...
-        </p>
-        <audio controls style="width: 100%; margin-bottom: 1rem;">
-          <source src="assets/audio/love_me.mp3" type="audio/mpeg">
-        </audio>
-        <p style="font-size: 1rem; color: #888; margin-top: 1rem;">
-          Our special song - the soundtrack to our love story
-        </p>
-      </div>
-    `
-  },
-  gallery: {
-    title: "Photo Memories =�",
-    content: `
-      <div class="modal-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-        <img src="assets/images/jaw kiss early days.jpeg" alt="Memory" style="width: 100%; border-radius: 8px;">
-        <img src="assets/images/handsheld.jpeg" alt="Memory" style="width: 100%; border-radius: 8px;">
-        <img src="assets/images/beach shadows heart.jpeg" alt="Memory" style="width: 100%; border-radius: 8px;">
-        <img src="assets/images/you look sooo good.jpeg" alt="Memory" style="width: 100%; border-radius: 8px;">
-      </div>
-      <p style="text-align: center; margin-top: 1.5rem; color: #888; font-style: italic;">
-        Captured moments of our beautiful journey together
-      </p>
-    `
-  },
-  letter: {
-    title: "Love Letter =�",
-    content: `
-      <div style="font-family: Georgia, serif; line-height: 1.8; font-size: 1.1rem; color: #555; padding: 1rem;">
-        <p style="margin-bottom: 1.5rem;">My Dearest Deandra,</p>
-
-        <p style="margin-bottom: 1rem;">
-          Three years ago, you walked into my life and changed everything. Every day since has been
-          an adventure, a blessing, and a reminder of how lucky I am to have you by my side.
-        </p>
-
-        <p style="margin-bottom: 1rem;">
-          You are my best friend, my partner in crime, my adventure buddy, and the love of my life.
-          Your smile brightens my worst days, your laugh is my favorite sound, and your love is
-          my safe haven.
-        </p>
-
-        <p style="margin-bottom: 1rem;">
-          Thank you for three incredible years of memories, growth, and unconditional love.
-          Here's to many more adventures, quiet moments, movie nights, beach days, and everything
-          in between.
-        </p>
-
-        <p style="margin-bottom: 1rem;">
-          I love you more than words can express, and I can't wait to see what the future holds for us.
-        </p>
-
-        <p style="margin-top: 2rem; text-align: right;">
-          Forever yours,<br>
-          <span style="font-size: 1.3rem; color: #d45d79;">e</span>
-        </p>
-      </div>
-    `
-  }
-};
-
-// Gift box interactions
-document.querySelectorAll('.gift-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const giftType = item.dataset.gift;
-    openGiftModal(giftType);
-  });
-});
-
-function openGiftModal(giftType) {
-  const modal = document.getElementById('gift-modal');
-  const modalBody = document.getElementById('modal-body');
-  const gift = giftContents[giftType];
-
-  modalBody.innerHTML = `
-    <h2 style="color: #d45d79; margin-bottom: 1.5rem;">${gift.title}</h2>
-    ${gift.content}
-  `;
-
-  modal.classList.add('active');
-
-  // Confetti when opening gift
-  createConfetti();
-}
-
-// Close modal
-document.querySelector('.modal-close').addEventListener('click', () => {
-  document.getElementById('gift-modal').classList.remove('active');
-});
-
-document.getElementById('gift-modal').addEventListener('click', (e) => {
-  if (e.target.id === 'gift-modal') {
-    document.getElementById('gift-modal').classList.remove('active');
-  }
-});
-
-// ===========================
-// DAILY AFFIRMATIONS MODULE
-// ===========================
-const affirmations = [
-  "You make every day brighter just by being in it.",
-  "Your love is the greatest gift I've ever received.",
-  "With you, I've found my forever home.",
-  "Every moment with you is a treasure.",
-  "You are my best friend and my greatest love.",
-  "Your smile is my favorite sight in the world.",
-  "I fall in love with you more every single day.",
-  "You make me want to be a better person.",
-  "Our love story is my favorite adventure.",
-  "Thank you for being you - perfect in every way.",
-  "You are my today and all of my tomorrows.",
-  "Life with you is a beautiful dream come true.",
-  "Your happiness is my happiness.",
-  "Together, we can conquer anything.",
-  "You are my sunshine on the cloudiest days.",
-  "I'm grateful for you every single moment.",
-  "Our love grows stronger with each passing day.",
-  "You complete me in ways I never knew I needed.",
-  "Forever grateful to call you mine.",
-  "You are my heart, my soul, my everything.",
-  // Add more affirmations (up to 365)
-  "Every day with you is a blessing.",
-  "You inspire me to be my best self.",
-  "Our journey together is my greatest joy.",
-  "Your love makes everything better.",
-  "I choose you, today and always.",
-  "You are my favorite person in the entire world.",
-  "With you, I am home.",
-  "Our love is a beautiful masterpiece.",
-  "You make my heart skip a beat every time.",
-  "I love you more than yesterday, less than tomorrow."
-];
-
-// Display affirmation based on day of year
-function displayDailyAffirmation() {
-  const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
-  const affirmationIndex = dayOfYear % affirmations.length;
-
-  document.getElementById('affirmation-text').textContent = affirmations[affirmationIndex];
-}
-
-displayDailyAffirmation();
-
-// ===========================
-// SMOOTH SCROLL POLISH
-// ===========================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (question.wrongMessage) {
+      quizFeedback.textContent = question.wrongMessage;
+    } else {
+      quizFeedback.textContent = '✗ Incorrect!';
     }
-  });
+  }
+
+  nextQuestionBtn.style.display = 'inline-block';
+}
+
+nextQuestionBtn.addEventListener('click', () => {
+  currentQuizIndex++;
+  loadQuizQuestion();
 });
 
-console.log("=� Anniversary App Loaded - Made with love!");
+function showQuizResults() {
+  questionText.style.display = 'none';
+  answersContainer.style.display = 'none';
+  quizFeedback.style.display = 'none';
+  nextQuestionBtn.style.display = 'none';
+
+  quizResults.style.display = 'block';
+  quizResults.innerHTML = `
+    <h3>Quiz Complete!</h3>
+    <p>You got ${quizScore} out of ${quizQuestions.length} correct!</p>
+    <p style="margin-top: 1.5rem; font-size: 1.2rem;">
+      ${quizScore === quizQuestions.length
+        ? "Perfect score! You know us so well! 💖"
+        : "Every moment with you is special! 💕"}
+    </p>
+  `;
+}
+
+// Initialize quiz
+loadQuizQuestion();
+
+// ===================
+// GIFT IMAGE MODAL
+// ===================
+function openGiftImage(imageSrc) {
+  const modal = document.getElementById('gift-image-modal');
+  const img = document.getElementById('gift-image-full');
+  img.src = imageSrc;
+  modal.classList.add('active');
+}
+
+function closeGiftImage() {
+  const modal = document.getElementById('gift-image-modal');
+  modal.classList.remove('active');
+}
+
+// Close gift image modal when clicking outside the image
+document.getElementById('gift-image-modal').addEventListener('click', (e) => {
+  if (e.target.id === 'gift-image-modal') {
+    closeGiftImage();
+  }
+});
+
+// ===================
+// REVEAL GIFTS FUNCTIONALITY
+// ===================
+document.getElementById('reveal-gifts-btn').addEventListener('click', () => {
+  const confirmed = confirm('Have your gifts been delivered?\n\nDeandra, do not reveal unless they have been!');
+
+  if (confirmed) {
+    // Hide the reveal button
+    document.getElementById('reveal-gifts-btn').style.display = 'none';
+
+    // Show the gifts grid with a fade-in animation
+    const giftsGrid = document.getElementById('gifts-grid');
+    giftsGrid.style.display = 'grid';
+    giftsGrid.style.opacity = '0';
+
+    setTimeout(() => {
+      giftsGrid.style.transition = 'opacity 1s ease';
+      giftsGrid.style.opacity = '1';
+    }, 100);
+  }
+});
+
+console.log('💖 Anniversary App Loaded!');
