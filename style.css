@@ -606,7 +606,8 @@ h2 {
   margin-bottom: 2rem;
 }
 
-#gallery-main-image {
+#gallery-main-image,
+#gallery-main-video {
   max-width: 100%;
   max-height: 70vh;
   border-radius: 10px;
@@ -649,7 +650,8 @@ h2 {
   flex-wrap: wrap;
 }
 
-.gallery-thumbnails img {
+.gallery-thumbnails img,
+.gallery-thumbnails video {
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -659,12 +661,14 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.gallery-thumbnails img:hover {
+.gallery-thumbnails img:hover,
+.gallery-thumbnails video:hover {
   border-color: #d45d79;
   transform: scale(1.1);
 }
 
-.gallery-thumbnails img.active {
+.gallery-thumbnails img.active,
+.gallery-thumbnails video.active {
   border-color: #fff;
 }
 

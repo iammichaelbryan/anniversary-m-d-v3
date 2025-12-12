@@ -148,6 +148,7 @@ const galleries = {
       '📍 Chez Maria Restaurant',
       '📍 Brew\'d Awakenings',
       '📍 Calby\'s Hidden Beauty River',
+      '📍 My House',
       '📍 Wherever tf else we felt like going (can\'t be bothered to list anymore)'
     ],
     images: [
@@ -186,16 +187,24 @@ const galleries = {
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (1).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (2).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.22 PM.mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM (4).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.20 PM.jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.23 PM (1).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.23 PM.jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.25 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.26 PM.mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.27 PM (1).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.27 PM.jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.28 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.28 PM.mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.29 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.30 PM.mp4',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.30 PM (1).mp4',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.32 PM.mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.33 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.35 PM.mp4',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.48.35 PM (1).mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM (1).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM (2).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.48.36 PM.jpeg',
@@ -215,6 +224,7 @@ const galleries = {
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (4).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM (5).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.24 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-11 at 5.49.25 PM.mp4',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM (1).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM (2).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.27 PM.jpeg',
@@ -223,7 +233,29 @@ const galleries = {
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (3).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (4).jpeg',
       'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM (5).jpeg',
-      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM.jpeg'
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-11 at 5.49.28 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 2.59.43 AM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 2.59.43 AM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 2.59.43 AM (2).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 2.59.43 AM (3).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.27.10 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.27.24 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.27.24 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.00 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.11 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.15 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.25 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.42 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.43 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.43 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.44 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.44 PM (1).jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.46 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.50 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Image 2025-12-12 at 12.28.51 PM.jpeg',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-12 at 12.28.51 PM.mp4',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-12 at 12.28.51 PM (1).mp4',
+      'assets/images/ourJourney/adventure and moments/WhatsApp Video 2025-12-12 at 12.28.51 PM (2).mp4'
     ]
   },
   'graduation': {
@@ -294,13 +326,20 @@ function openGallery(galleryKey) {
   // Load thumbnails
   galleryThumbnails.innerHTML = '';
   currentGallery.images.forEach((img, index) => {
-    // Skip video files
-    if (img.endsWith('.mp4')) return;
-
-    const thumb = document.createElement('img');
-    thumb.src = img;
-    thumb.addEventListener('click', () => showImage(index));
-    galleryThumbnails.appendChild(thumb);
+    if (img.endsWith('.mp4')) {
+      // Create video thumbnail
+      const video = document.createElement('video');
+      video.src = img;
+      video.muted = true;
+      video.addEventListener('click', () => showImage(index));
+      galleryThumbnails.appendChild(video);
+    } else {
+      // Create image thumbnail
+      const thumb = document.createElement('img');
+      thumb.src = img;
+      thumb.addEventListener('click', () => showImage(index));
+      galleryThumbnails.appendChild(thumb);
+    }
   });
 
   showImage(0);
@@ -308,31 +347,57 @@ function openGallery(galleryKey) {
 }
 
 function showImage(index) {
-  // Filter out video files
-  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
   currentImageIndex = index;
+  const mediaFile = currentGallery.images[currentImageIndex];
 
-  if (imageFiles[currentImageIndex]) {
-    galleryMainImage.src = imageFiles[currentImageIndex];
+  // Get the container where we'll display the media
+  const viewer = document.querySelector('.gallery-viewer');
 
-    // Update thumbnail active state
-    const thumbs = galleryThumbnails.querySelectorAll('img');
-    thumbs.forEach((thumb, i) => {
-      thumb.classList.toggle('active', i === currentImageIndex);
-    });
+  // Remove existing media element
+  const existingMedia = viewer.querySelector('img, video');
+  if (existingMedia && existingMedia.id !== 'gallery-main-image') {
+    existingMedia.remove();
   }
+
+  if (mediaFile.endsWith('.mp4')) {
+    // Hide image element, create and show video element
+    galleryMainImage.style.display = 'none';
+
+    let videoElement = viewer.querySelector('video');
+    if (!videoElement) {
+      videoElement = document.createElement('video');
+      videoElement.id = 'gallery-main-video';
+      videoElement.controls = true;
+      videoElement.autoplay = false;
+      viewer.insertBefore(videoElement, viewer.querySelector('.gallery-nav.next'));
+    }
+    videoElement.style.display = 'block';
+    videoElement.src = mediaFile;
+  } else {
+    // Hide video element if it exists, show image element
+    const videoElement = viewer.querySelector('video');
+    if (videoElement) {
+      videoElement.style.display = 'none';
+    }
+    galleryMainImage.style.display = 'block';
+    galleryMainImage.src = mediaFile;
+  }
+
+  // Update thumbnail active state
+  const thumbs = galleryThumbnails.querySelectorAll('img, video');
+  thumbs.forEach((thumb, i) => {
+    thumb.classList.toggle('active', i === currentImageIndex);
+  });
 }
 
 // Navigation
 prevBtn.addEventListener('click', () => {
-  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
-  currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+  currentImageIndex = (currentImageIndex - 1 + currentGallery.images.length) % currentGallery.images.length;
   showImage(currentImageIndex);
 });
 
 nextBtn.addEventListener('click', () => {
-  const imageFiles = currentGallery.images.filter(img => !img.endsWith('.mp4'));
-  currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+  currentImageIndex = (currentImageIndex + 1) % currentGallery.images.length;
   showImage(currentImageIndex);
 });
 
