@@ -8,8 +8,7 @@
 const songs = [
   'assets/audio/Beyoncé - XO (Video).mp3',
   'assets/audio/love_me.mp3',
-  'assets/audio/thoseeyes.mp3',
-  'assets/audio/wgft.mp3'
+  'assets/audio/thoseeyes.mp3'
 ];
 
 // Shuffle songs
