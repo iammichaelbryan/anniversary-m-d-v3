@@ -50,10 +50,10 @@ document.addEventListener('click', () => {
 // GALLERY DATA
 // ===================
 const galleries = {
-  'first-dates': {
-    title: 'First Dates',
-    caption: 'Here are our first dates, simple yet they paved the way to the amazing bond we share now.',
-    locations: ['📍 Devon House, Kingston', '📍 Palace Cineplex, Sovereign Centre, Kingston'],
+  'the-beginning': {
+    title: 'The Beginning',
+    caption: 'Here are our first dates and earliest moments together, simple yet they paved the way to the amazing bond we share now.',
+    locations: ['📍 Devon House, Kingston', '📍 Palace Cineplex, Sovereign Centre, Kingston', '📍 Tower of Olympus, Towers Hall, UWI, Mona'],
     images: [
       'assets/images/ourJourney/first dates/firstDate1.jpeg',
       'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.15 PM (2).jpeg',
@@ -115,14 +115,7 @@ const galleries = {
       'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM (6).jpeg',
       'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.21 PM.jpeg',
       'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.22 PM (1).jpeg',
-      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.22 PM.jpeg'
-    ]
-  },
-  'early-days': {
-    title: 'Early Days',
-    caption: 'Our first moments together, simple yet they paved the way to the amazing bond we share now.',
-    locations: ['📍 Tower of Olympus, Towers Hall, UWI, Mona'],
-    images: [
+      'assets/images/ourJourney/first dates/WhatsApp Image 2025-12-11 at 5.20.22 PM.jpeg',
       'assets/images/ourJourney/early days/earlydays1.jpeg',
       'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (2).jpeg',
       'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (3).jpeg',
