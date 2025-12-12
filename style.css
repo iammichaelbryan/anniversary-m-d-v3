@@ -59,6 +59,11 @@ body {
   transform: translateY(-2px);
 }
 
+.navbar a.active {
+  background: rgba(212, 93, 121, 0.9);
+  border-bottom: 3px solid #fff;
+}
+
 /* Section Styling */
 section {
   min-height: 100vh;

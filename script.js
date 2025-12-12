@@ -3,6 +3,35 @@
    =================== */
 
 // ===================
+// NAVIGATION HIGHLIGHTING
+// ===================
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.navbar a');
+
+function highlightNav() {
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (window.scrollY >= sectionTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', highlightNav);
+window.addEventListener('load', highlightNav);
+
+// ===================
 // BACKGROUND MUSIC
 // ===================
 const songs = [
@@ -34,11 +63,11 @@ function playNextSong() {
   musicPlayer.src = shuffledSongs[currentSongIndex];
   musicPlayer.play().catch(err => console.log('Music autoplay blocked:', err));
 
-  // Stop after 90 seconds and play next song
+  // Stop after 120 seconds and play next song
   setTimeout(() => {
     currentSongIndex++;
     playNextSong();
-  }, 90000);
+  }, 120000);
 }
 
 // Start music on first user interaction
@@ -342,6 +371,12 @@ function openGallery(galleryKey) {
 function showImage(index) {
   currentImageIndex = index;
   const mediaFile = currentGallery.images[currentImageIndex];
+
+  // Scroll modal to top so user can see the main image
+  const modalContent = document.querySelector('#gallery-modal .modal-content');
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
 
   // Get the container where we'll display the media
   const viewer = document.querySelector('.gallery-viewer');
