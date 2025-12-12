@@ -238,6 +238,7 @@ h2 {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 20;
 }
 
 .gallery-preview:hover .preview-overlay {

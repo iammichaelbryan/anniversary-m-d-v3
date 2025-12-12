@@ -373,9 +373,9 @@ function showImage(index) {
   const mediaFile = currentGallery.images[currentImageIndex];
 
   // Scroll modal to top so user can see the main image
-  const modalContent = document.querySelector('#gallery-modal .modal-content');
-  if (modalContent) {
-    modalContent.scrollTop = 0;
+  const modalElement = document.getElementById('gallery-modal');
+  if (modalElement) {
+    modalElement.scrollTop = 0;
   }
 
   // Get the container where we'll display the media
