@@ -121,7 +121,7 @@ const galleries = {
   'early-days': {
     title: 'Early Days',
     caption: 'Our first moments together, simple yet they paved the way to the amazing bond we share now.',
-    locations: ['📍 Tower of Olympus, Towers Tall, UWI, Mona'],
+    locations: ['📍 Tower of Olympus, Towers Hall, UWI, Mona'],
     images: [
       'assets/images/ourJourney/early days/earlydays1.jpeg',
       'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (2).jpeg',
@@ -133,7 +133,7 @@ const galleries = {
     title: 'Adventures & Moments',
     caption: 'Find our most genuine moments together, dates, adventures, goofing around, the point is, WE ARE TOGETHER. So many more pictures I didn\'t put in here, but you get the point, lol.',
     locations: [
-      '📍 Tower of the Mighty Dragons, Towers Tall, UWI, Mona',
+      '📍 Tower of the Mighty Dragons, Towers Hall, UWI, Mona',
       '📍 Dominique\'s Wedding',
       '📍 The Circus',
       '📍 Go Karting',
