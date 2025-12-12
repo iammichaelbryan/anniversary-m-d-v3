@@ -689,6 +689,12 @@ h2 {
    RESPONSIVE DESIGN
    =================== */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+  }
+
   .navbar {
     gap: 0.5rem;
     padding: 0.8rem 1rem;
