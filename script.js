@@ -148,7 +148,10 @@ const galleries = {
       'assets/images/ourJourney/early days/earlydays1.jpeg',
       'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (2).jpeg',
       'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM (3).jpeg',
-      'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM.jpeg'
+      'assets/images/ourJourney/early days/WhatsApp Image 2025-12-11 at 5.20.19 PM.jpeg',
+      'assets/images/ourJourney/early days/WhatsApp Video 2025-12-11 at 5.20.22 PM.mp4',
+      'assets/images/ourJourney/early days/WhatsApp Video 2025-12-11 at 5.20.23 PM.mp4',
+      'assets/images/ourJourney/early days/WhatsApp Video 2025-12-11 at 5.20.24 PM.mp4'
     ]
   },
   'adventures': {
